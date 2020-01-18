@@ -45,11 +45,13 @@ $(document).ready(function () {
         
             if(checkPick.length > 0 || pickPrev.length > 0) {
                 var picked = []
-                if(checkPick.length > 0) {
-                    picked = listAvatar.splice(numberPick, numberPick + 1)
-                    ARRAY_FLY.push(picked[0].code)
-                }else if(pickPrev.length >0){
-                    picked = pickPrev
+                if(stt != 9) {
+                    if (checkPick.length > 0) {
+                        picked = listAvatar.splice(numberPick, numberPick + 1)
+                        ARRAY_FLY.push(picked[0].code)
+                    } else if (pickPrev.length > 0) {
+                        picked = pickPrev
+                    }
                 }
                 if(picked.length>0) {
                     if (stt == 0) {
@@ -212,88 +214,7 @@ $(document).ready(function () {
                         $("[data-avatar=1]").animate({top: '287px', left: '0px'}, 1000)
                         $("[data-avatar=0]").animate({top: '363px', left: '0px'}, 1000)
                     }
-                
-                    if (stt == 9) {
-                        $("[data-avatar=3]").css({}).animate({
-                            top: '27%',
-                            right: '10%',
-                            width: '98%',
-                            height: '30%',
-                            left: '-330%',
-                            position: 'absolute'
-                        }, 1000)
-                        $("[data-avatar=2]").css({}).animate({
-                            top: '27%',
-                            right: '10%',
-                            width: '98%',
-                            height: '30%',
-                            left: '-232%',
-                            position: 'absolute'
-                        }, 1000)
-                        $("[data-avatar=1]").css({}).animate({
-                            top: '57%',
-                            right: '10%',
-                            width: '98%',
-                            height: '30%',
-                            left: '-330%',
-                            position: 'absolute'
-                        }, 1000)
-                        $("[data-avatar=0]").css({}).animate({
-                            top: '57%',
-                            right: '10%',
-                            width: '98%',
-                            height: '30%',
-                            left: '-232%',
-                            position: 'absolute'
-                        }, 1000)
-                    
-                    
-                        var animateToLogo = setTimeout(function () {
-                            var bg0 = $("[data-avatar=0]").attr('data-url');
-                            var bg1 = $("[data-avatar=1]").attr('data-url');
-                            var bg2 = $("[data-avatar=2]").attr('data-url');
-                            var bg3 = $("[data-avatar=3]").attr('data-url');
-                            
-                            var htmlFly = ''
-                            htmlFly += '<div class="box-four-star" style="left: 15% !important; top: 0% !important; position: absolute !important;" id="box-four-avatar' + (numRandomFourBox) + '">\n';
-                        
-                            htmlFly += '<img class="avatar-sm-new box-avatar-1" src="' + bg0 + '" />\n';
-                        
-                        
-                            htmlFly += '<img class="avatar-sm-new box-avatar-2" src="' + bg1 + '" />\n';
-                        
-                            htmlFly += '<img class="avatar-sm-new box-avatar-3" src="' + bg2 + '" />\n';
-                        
-                        
-                            htmlFly += '<img class="avatar-sm-new box-avatar-4" src="' + bg3 + '" />\n';
-                        
-                            htmlFly += '</div>'
-                            $('.box-all-avatar').append(htmlFly)
-                            $("[data-avatar=0]").remove();
-                            $("[data-avatar=1]").remove();
-                            $("[data-avatar=2]").remove();
-                            $("[data-avatar=3]").remove();
-                        
-                            $("#box-four-avatar" + (numRandomFourBox)).css({
-                                position: 'relative',
-                                top: 'auto',
-                                left: 'auto',
-                                width: 'auto',
-                                height: 'auto',
-                                float: 'left'
-                            }).animate({
-                                'float': 'left',
-                                'width': '50px',
-                                'height': '50px'
-                            }, 1000)
-                            
-                            if(numRandomFourBox == 35){
-                                $('.new-right-box').hide()
-                            }
-                        
-                            clearTimeout(animateToLogo)
-                        }, 3000)
-    
+                    if(stt == 10){
                         $("[data-avatar=9]").css({
                             "height": ch * 0.24,
                             "display": "block",
@@ -332,10 +253,9 @@ $(document).ready(function () {
                             }
                             clearTimeout(timeOut)
                         }, 500)
-                    
                     }
                 
-                    if (stt == 10) {
+                    if (stt == 11) {
                         $("[data-avatar=6]").css({
                             "height": ch * 0.24,
                             "display": "block",
@@ -355,8 +275,89 @@ $(document).ready(function () {
                         $("[data-avatar=0]").animate({top: '207px', left: '0px'}, 1000)
                         stt = 6
                     }
-                    stt++
                 }
+                if (stt == 9) {
+                    $("[data-avatar=3]").css({}).animate({
+                        top: '27%',
+                        right: '10%',
+                        width: '98%',
+                        height: '30%',
+                        left: '-330%',
+                        position: 'absolute'
+                    }, 1000)
+                    $("[data-avatar=2]").css({}).animate({
+                        top: '27%',
+                        right: '10%',
+                        width: '98%',
+                        height: '30%',
+                        left: '-232%',
+                        position: 'absolute'
+                    }, 1000)
+                    $("[data-avatar=1]").css({}).animate({
+                        top: '57%',
+                        right: '10%',
+                        width: '98%',
+                        height: '30%',
+                        left: '-330%',
+                        position: 'absolute'
+                    }, 1000)
+                    $("[data-avatar=0]").css({}).animate({
+                        top: '57%',
+                        right: '10%',
+                        width: '98%',
+                        height: '30%',
+                        left: '-232%',
+                        position: 'absolute'
+                    }, 1000)
+        
+        
+                    var animateToLogo = setTimeout(function () {
+                        var bg0 = $("[data-avatar=0]").attr('data-url');
+                        var bg1 = $("[data-avatar=1]").attr('data-url');
+                        var bg2 = $("[data-avatar=2]").attr('data-url');
+                        var bg3 = $("[data-avatar=3]").attr('data-url');
+            
+                        var htmlFly = ''
+                        htmlFly += '<div class="box-four-star" style="left: 15% !important; top: 0% !important; position: absolute !important;" id="box-four-avatar' + (numRandomFourBox) + '">\n';
+            
+                        htmlFly += '<img class="avatar-sm-new box-avatar-1" src="' + bg0 + '" />\n';
+            
+            
+                        htmlFly += '<img class="avatar-sm-new box-avatar-2" src="' + bg1 + '" />\n';
+            
+                        htmlFly += '<img class="avatar-sm-new box-avatar-3" src="' + bg2 + '" />\n';
+            
+            
+                        htmlFly += '<img class="avatar-sm-new box-avatar-4" src="' + bg3 + '" />\n';
+            
+                        htmlFly += '</div>'
+                        $('.box-all-avatar').append(htmlFly)
+                        $("[data-avatar=0]").remove();
+                        $("[data-avatar=1]").remove();
+                        $("[data-avatar=2]").remove();
+                        $("[data-avatar=3]").remove();
+            
+                        $("#box-four-avatar" + (numRandomFourBox)).css({
+                            position: 'relative',
+                            top: 'auto',
+                            left: 'auto',
+                            width: 'auto',
+                            height: 'auto',
+                            float: 'left'
+                        }).animate({
+                            'float': 'left',
+                            'width': '50px',
+                            'height': '50px'
+                        }, 1000)
+            
+                        if(numRandomFourBox == 35){
+                            $('.new-right-box').hide()
+                        }
+            
+                        clearTimeout(animateToLogo)
+                    }, 1000)
+                }
+                stt++
             }else {
                 $("#delegate-name").text('')
             }
