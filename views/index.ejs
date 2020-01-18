@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <meta http-equiv="Content-Language" content="vi">
 <meta content="width=device-width, initial-scale=1" name="viewport">
-<title> I ♥ You</title>
+<title> Hoài Ngô</title>
 <link rel="canonical" href="" itemprop="url"/>
 <meta http-equiv="audience" content="General"/>
 <meta name="resource-type" content="Document"/>
@@ -85,7 +85,7 @@
 
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<script src="src/letItSnow.js" charset="utf-8"></script>
+<script src="/src/letItSnow.js" charset="utf-8"></script>
 <script type="text/javascript">
     $(function launchSnowflakes() {
         $('#snowspawner').letItSnow({
@@ -146,15 +146,18 @@
         </div>
     </div>
     <audio id="sound1" src="./mp3/De-Thuong.mp3" preload="auto"></audio>
+    <audio id="sound2" src="./mp3/em-trong-mat-toi.mp3" preload="auto"></audio>
 </div>
 
-<script type="text/javascript" src="/js/underscore-min.js"></script>
 <script type="text/javascript" src="/js/custom.js"></script>
 <script type="text/javascript" src="/js/main.js"></script>
 <script type="text/javascript" src="/js/snow-it.js"></script>
 
 <script type="text/javascript">
    document.getElementById('sound1').play();
+   setTimeout(function () {
+       document.getElementById('sound2').play();
+   }, 197000)
 </script>
 </body>
 </html>
